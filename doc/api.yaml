@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   title: React Learn Words
-  description: a backend part of RSSchool-React "Learn words" task
+  description: React Learn Words
   version: 1.0.0
 
 servers:
