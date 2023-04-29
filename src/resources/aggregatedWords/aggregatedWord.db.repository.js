@@ -43,7 +43,7 @@ const pipeline = [
 ];
 
 const getAll = async (userId, group, page, perPage, filter) => {
-  lookup.$lookup.pipeline[0].$match.$expr.$and[0].$eq[1] = mongoose.Types.ObjectId(
+  lookup.$lookup.pipeline[0].$match.$expr.$and[0].$eq[1] = new mongoose.Types.ObjectId(
     userId
   );
 
@@ -78,13 +78,13 @@ const getAll = async (userId, group, page, perPage, filter) => {
 };
 
 const get = async (wordId, userId) => {
-  lookup.$lookup.pipeline[0].$match.$expr.$and[0].$eq[1] = mongoose.Types.ObjectId(
+  lookup.$lookup.pipeline[0].$match.$expr.$and[0].$eq[1] = new mongoose.Types.ObjectId(
     userId
   );
 
   const match = {
     $match: {
-      _id: mongoose.Types.ObjectId(wordId)
+      _id: new mongoose.Types.ObjectId(wordId)
     }
   };
 

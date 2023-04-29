@@ -9,12 +9,7 @@ const mongoose = require('mongoose');
 const { PORT, MONGO_CONNECTION_STRING } = require('./common/config');
 const app = require('./app');
 
-mongoose.connect(MONGO_CONNECTION_STRING, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-});
+mongoose.connect(MONGO_CONNECTION_STRING);
 
 const db = mongoose.connection;
 
